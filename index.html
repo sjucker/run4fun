@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#ffffff">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Next 5">
-<title>Next 5 Trainings — Valencia Marathon</title>
+<meta name="apple-mobile-web-app-title" content="Training">
+<title>Today's Training — Valencia Marathon</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%8F%83%3C/text%3E%3C/svg%3E">
 <style>
 :root {
@@ -75,6 +75,22 @@ h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: v
 .gym { display: inline-block; margin-top: 7px; font-size: 11.5px; color: var(--ink-faint);
        border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; background: #fff; }
 
+.today-card { border-left-width: 4px; padding: 15px 17px; background: #fff;
+              box-shadow: 0 1px 3px rgba(20,24,32,.07); margin-bottom: 0; }
+.today-card .when { font-size: 17px; letter-spacing: -0.01em; }
+.today-label { font-size: 11px; text-transform: uppercase; letter-spacing: .07em;
+               color: var(--ink-faint); font-weight: 600; margin-bottom: 9px; }
+.today-card .title { margin-top: 4px; }
+.rest-card { border-left-color: var(--line); }
+.badge-done { background: #eaf6ee; color: #1f6b42; border: 1px solid #cfe8d8;
+              font-size: 11.5px; padding: 2px 7px; border-radius: 4px; font-weight: 600;
+              white-space: nowrap; }
+.yday { font-size: 13.5px; color: var(--ink-soft); margin: 10px 0 0;
+        padding: 10px 13px; background: var(--card);
+        border: 1px solid var(--line); border-radius: 8px; }
+.yday strong { color: var(--ink); font-weight: 650; }
+.rest { color: var(--ink-faint); }
+
 .done { display: flex; align-items: baseline; gap: 10px; padding: 8px 2px;
         border-bottom: 1px solid var(--line); font-size: 13.5px; flex-wrap: wrap; }
 .done:last-child { border-bottom: 0; }
@@ -93,13 +109,13 @@ footer p { margin: 0 0 6px; }
 <body>
 <div class="wrap">
   <header>
-    <h1>Next 5 Trainings</h1>
+    <h1>Today's Training</h1>
     <div class="sub">Valencia Marathon · Sunday 6 December 2026 · target 2:59:00 (4:14/km)</div>
     <div class="meta-row">
       <div class="meta"><div class="k">To race</div><div class="v" id="m-days">–</div></div>
       <div class="meta"><div class="k">Plan week</div><div class="v" id="m-week">–</div></div>
       <div class="meta" style="flex:1;min-width:180px">
-        <div class="k">This week</div>
+        <div class="k">Last 7 days</div>
         <div class="v" id="m-km">–</div>
         <div class="bar"><i id="m-bar" style="width:0%"></i></div>
       </div>
@@ -108,10 +124,13 @@ footer p { margin: 0 0 6px; }
 
   <div id="banner"></div>
 
-  <h2>Up next</h2>
-  <div id="next"><div class="skel">Loading plan…</div></div>
+  <div id="today"><div class="skel">Loading plan…</div></div>
+  <div id="yesterday"></div>
 
-  <div id="week-section"></div>
+  <h2>Coming up</h2>
+  <div id="next"></div>
+
+  <div id="log-section"></div>
 
   <footer>
     <p>Paces in min/km. Easy 5:00–5:30 · long 4:55–5:20 · MP 4:12–4:16 · threshold 3:58–4:08 · interval 3:42–3:52.</p>
@@ -298,48 +317,100 @@ function card(s, isFirst, n){
     + '</div>';
 }
 
+var BY_DATE = {};
+SESSIONS.forEach(function(s){ BY_DATE[s.date] = s; });
+
+function isDone(s, kmByDate){
+  var a = kmByDate[s.date];
+  return (a && a.km >= 0.6*s.km) ? a : null;
+}
+
+/* a planned day with no session: Monday is rest, Friday is gym, anything else is a gap */
+function offDay(iso){
+  var dow = parse(iso).getDay();          // 0=Sun … 6=Sat
+  if(dow===1) return {label:"Rest day", text:"Nothing planned. Walk, stretch, sleep — this is part of the training."};
+  if(dow===5) return {label:"Gym day",  text:"No run planned. Strength session, then stay off the legs."};
+  return {label:"No session", text:"Nothing scheduled for today."};
+}
+
+function bigCard(iso, kmByDate){
+  var s = BY_DATE[iso];
+  if(!s){
+    var o = offDay(iso);
+    return '<div class="card today-card rest-card">'
+      + '<div class="today-label">Today · '+esc(pretty(iso))+'</div>'
+      + '<div class="when">'+o.label+'</div>'
+      + '<div class="detail">'+o.text+'</div></div>';
+  }
+  var col = "var(--"+s.type+")";
+  var a = isDone(s, kmByDate);
+  return '<div class="card today-card" style="border-left-color:'+col+'">'
+    + '<div class="today-label">Today · '+esc(pretty(iso))+'</div>'
+    + '<div class="card-top">'
+    +   '<span class="when">'+esc(s.name)+'</span>'
+    +   '<span class="tag" style="background:'+col+'">'+LABEL[s.type]+'</span>'
+    +   (a? '<span class="badge-done">✓ '+a.km.toFixed(1)+' km @ '+paceOf(a.m,a.t)+'/km</span>' : '')
+    +   '<span class="dist">'+s.km+' km</span>'
+    + '</div>'
+    + '<div class="title pace">'+esc(s.pace)+'/km</div>'
+    + '<div class="detail">'+esc(s.detail)+'</div>'
+    + (s.gym?'<span class="gym">+ gym</span>':'')
+    + '</div>';
+}
+
+function ydayLine(kmByDate, dataOk){
+  var y = addDays(TODAY,-1), s = BY_DATE[y], a = kmByDate[y];
+  var dow = parse(y).toLocaleDateString("en-GB",{weekday:"long"});
+  var actual = a ? a.km.toFixed(1)+' km @ '+paceOf(a.m,a.t)+'/km'
+                 : (dataOk ? 'nothing logged' : 'no data');
+  var planned = s ? esc(s.name)+' ('+s.km+' km)' : offDay(y).label.toLowerCase();
+  return '<div class="yday"><strong>Yesterday</strong> · '+dow+' — planned '+planned
+       + ' &nbsp;→&nbsp; '+actual+'</div>';
+}
+
 function render(kmByDate, dataOk, note){
   var wk = currentWeek();
 
-  var weekPlan = SESSIONS.filter(function(s){ return s.week===wk.w; });
-  var done = {};
-  weekPlan.forEach(function(s){
-    var a = kmByDate[s.date];
-    if(a && a.km >= 0.6*s.km) done[s.date]=a;
-  });
-
-  var wkKm = 0;
-  for(var i=0;i<7;i++){
-    var d=addDays(wk.mon,i);
-    if(kmByDate[d]) wkKm += kmByDate[d].km;
+  /* rolling 7-day volume, today included */
+  var roll = 0;
+  for(var i=6;i>=0;i--){
+    var d = addDays(TODAY,-i);
+    if(kmByDate[d]) roll += kmByDate[d].km;
   }
 
   document.getElementById("m-days").innerHTML = Math.max(0,diff(TODAY,RACE))+' <small>days</small>';
   document.getElementById("m-week").innerHTML = 'W'+wk.w+' <small>of 21'+(wk.peak?" · peak":(wk.down?" · down":""))+'</small>';
-  document.getElementById("m-km").innerHTML = (dataOk? wkKm.toFixed(1) : "–")+' <small>/ '+wk.target+' km</small>';
-  document.getElementById("m-bar").style.width = Math.min(100, dataOk? wkKm/wk.target*100 : 0)+"%";
+  document.getElementById("m-km").innerHTML = (dataOk? roll.toFixed(1) : "–")+' <small>/ '+wk.target+' km</small>';
+  document.getElementById("m-bar").style.width = Math.min(100, dataOk? roll/wk.target*100 : 0)+"%";
 
-  var next = SESSIONS.filter(function(s){ return s.date >= TODAY && !done[s.date]; }).slice(0,5);
+  document.getElementById("today").innerHTML = bigCard(TODAY, kmByDate);
+  document.getElementById("yesterday").innerHTML = ydayLine(kmByDate, dataOk);
+
+  var next = SESSIONS.filter(function(s){
+    return s.date > TODAY && !isDone(s, kmByDate);
+  }).slice(0,4);
   document.getElementById("next").innerHTML = next.length
-    ? next.map(function(s,i){ return card(s,i===0,diff(TODAY,s.date)); }).join("")
+    ? next.map(function(s,i){ return card(s,false,diff(TODAY,s.date)); }).join("")
     : '<div class="skel">Plan complete. Well run.</div>';
 
-  var past = weekPlan.filter(function(s){ return s.date < TODAY; });
+  /* rolling log: the last 7 days, planned against actual */
   var html = "";
-  if(past.length && dataOk){
-    html += '<h2>Week '+wk.w+' so far</h2>';
-    past.forEach(function(s){
-      var a = kmByDate[s.date];
-      var ok = !!done[s.date];
+  if(dataOk){
+    html += '<h2>Last 7 days</h2>';
+    for(var j=7;j>=1;j--){
+      var d = addDays(TODAY,-j), s = BY_DATE[d], a = kmByDate[d];
+      var ok = s ? !!isDone(s, kmByDate) : !!a;
+      var name = s ? esc(s.name)+' <span class="pace">('+s.km+' km planned)</span>'
+                   : '<span class="rest">'+offDay(d).label.toLowerCase()+'</span>';
       html += '<div class="done">'
         + '<span class="'+(ok?"tick":"cross")+'">'+(ok?"✓":"·")+'</span>'
-        + '<span class="d">'+parse(s.date).toLocaleDateString("en-GB",{weekday:"short"})+'</span>'
-        + '<span class="n">'+esc(s.name)+' <span class="pace">('+s.km+' km planned)</span></span>'
-        + '<span class="a">'+(a? a.km.toFixed(1)+' km · '+paceOf(a.m,a.t)+'/km' : 'not logged')+'</span>'
+        + '<span class="d">'+parse(d).toLocaleDateString("en-GB",{weekday:"short"})+'</span>'
+        + '<span class="n">'+name+'</span>'
+        + '<span class="a">'+(a? a.km.toFixed(1)+' km · '+paceOf(a.m,a.t)+'/km' : (s?'not logged':'—'))+'</span>'
         + '</div>';
-    });
+    }
   }
-  document.getElementById("week-section").innerHTML = html;
+  document.getElementById("log-section").innerHTML = html;
 
   document.getElementById("banner").innerHTML = note
     ? '<div class="banner'+(dataOk?"":" err")+'">'+esc(note)+'</div>' : "";
