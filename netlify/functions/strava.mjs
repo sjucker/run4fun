@@ -24,7 +24,18 @@ async function getAccessToken(id, secret, refresh) {
       refresh_token: refresh,
     }),
   });
-  if (!res.ok) throw new Error(`token refresh failed: ${res.status}`);
+  if (!res.ok) {
+    // Strava explains itself in the body — surface it, it names the offending field.
+    // e.g. {"message":"Bad Request","errors":[{"resource":"RefreshToken","field":"refresh_token","code":"invalid"}]}
+    const body = await res.text().catch(() => "<no body>");
+    console.error("Strava token refresh rejected:", res.status, body);
+    console.error(
+      "credential shapes — client_id:", `${id.length} chars, numeric: ${/^\d+$/.test(id)}`,
+      "| client_secret:", `${secret.length} chars (expect 40)`,
+      "| refresh_token:", `${refresh.length} chars (expect 40)`
+    );
+    throw new Error(`token refresh failed: ${res.status} ${body}`);
+  }
   const j = await res.json();
   if (j.refresh_token && j.refresh_token !== refresh) {
     console.warn("Strava issued a new refresh token — update STRAVA_REFRESH_TOKEN:", j.refresh_token);
@@ -65,7 +76,12 @@ function aggregate(activities) {
 }
 
 export default async () => {
-  const { STRAVA_CLIENT_ID, STRAVA_CLIENT_SECRET, STRAVA_REFRESH_TOKEN } = process.env;
+  // Trim: pasting into the Netlify UI easily carries a trailing newline or stray quotes,
+  // and Strava answers a padded credential with a flat 400.
+  const clean = (v) => (v || "").trim().replace(/^["']|["']$/g, "");
+  const STRAVA_CLIENT_ID = clean(process.env.STRAVA_CLIENT_ID);
+  const STRAVA_CLIENT_SECRET = clean(process.env.STRAVA_CLIENT_SECRET);
+  const STRAVA_REFRESH_TOKEN = clean(process.env.STRAVA_REFRESH_TOKEN);
 
   if (!STRAVA_CLIENT_ID || !STRAVA_CLIENT_SECRET || !STRAVA_REFRESH_TOKEN) {
     return Response.json(
@@ -90,7 +106,18 @@ export default async () => {
     );
   } catch (e) {
     console.error("strava function failed:", e);
-    return Response.json({ error: String(e.message || e) }, { status: 502 });
+    const msg = String(e.message || e);
+    return Response.json(
+      {
+        error: msg,
+        hint: msg.includes("token refresh failed")
+          ? "STRAVA_REFRESH_TOKEN is being rejected. It must be the refresh_token from the " +
+            "authorization-code exchange (not the access token, not the one shown on Strava's " +
+            "API settings page), and it must belong to the same client_id/secret pair."
+          : undefined,
+      },
+      { status: 502 }
+    );
   }
 };
 
