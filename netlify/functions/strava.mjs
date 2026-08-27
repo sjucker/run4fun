@@ -79,9 +79,36 @@ export default async () => {
   // Trim: pasting into the Netlify UI easily carries a trailing newline or stray quotes,
   // and Strava answers a padded credential with a flat 400.
   const clean = (v) => (v || "").trim().replace(/^["']|["']$/g, "");
+
+  // Be forgiving about the classic setup mistake: pasting the whole token-exchange
+  // response instead of just the refresh_token field out of it.
+  const extractToken = (raw) => {
+    const v = clean(raw);
+    if (v.startsWith("{")) {
+      try {
+        const j = JSON.parse(v);
+        if (j.refresh_token) {
+          console.warn(
+            "STRAVA_REFRESH_TOKEN holds the whole token response — using its refresh_token " +
+            "field. Replace the variable with just that 40-character value."
+          );
+          return String(j.refresh_token).trim();
+        }
+      } catch { /* not JSON after all, fall through */ }
+    }
+    return v;
+  };
+
   const STRAVA_CLIENT_ID = clean(process.env.STRAVA_CLIENT_ID);
   const STRAVA_CLIENT_SECRET = clean(process.env.STRAVA_CLIENT_SECRET);
-  const STRAVA_REFRESH_TOKEN = clean(process.env.STRAVA_REFRESH_TOKEN);
+  const STRAVA_REFRESH_TOKEN = extractToken(process.env.STRAVA_REFRESH_TOKEN);
+
+  if (STRAVA_REFRESH_TOKEN && !/^[0-9a-f]{40}$/i.test(STRAVA_REFRESH_TOKEN)) {
+    console.warn(
+      `STRAVA_REFRESH_TOKEN doesn't look like a Strava token (${STRAVA_REFRESH_TOKEN.length} ` +
+      "chars, expected 40 hex). Trying anyway, but this is very likely the problem."
+    );
+  }
 
   if (!STRAVA_CLIENT_ID || !STRAVA_CLIENT_SECRET || !STRAVA_REFRESH_TOKEN) {
     return Response.json(
