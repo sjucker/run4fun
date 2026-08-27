@@ -1,14 +1,15 @@
-# Next 5 Trainings — Valencia Marathon 2026
+# run4fun — Valencia Marathon 2026
 
-A one-page view of the next five sessions in my 21-week build to the **Valencia Marathon, Sunday 6 December 2026** (target 2:59:00 — 4:14/km).
+A one-page daily view of my 21-week build to the **Valencia Marathon, Sunday 6 December 2026** (target 2:59:00 — 4:14/km).
 
-The page reads the browser's date, works out which plan week it is, and shows the next five sessions with the full prescription. Completed sessions are ticked off automatically from Strava and drop out of the list.
+The page reads the browser's date and shows today's session with the full prescription, yesterday's planned-versus-actual, the next four sessions, and a rolling 7-day log. Completed sessions are ticked off automatically from Strava.
 
 ```
 index.html                     the whole page — plan data baked in, no build step
 netlify/functions/strava.mjs   serverless proxy to the Strava API
 netlify.toml                   publish + function config
 data/activities.json           offline fallback snapshot
+TRAINING_LOG.md                block history and standing watch-items
 ```
 
 ## How the Strava check-off works
@@ -26,7 +27,7 @@ A session counts as done when the day's running volume reaches 60% of what was p
 ### 1. Push to GitHub
 
 ```bash
-git remote add origin git@github.com:<your-username>/valencia-2026.git
+git remote add origin git@github.com:<your-username>/run4fun.git
 git push -u origin main
 ```
 
