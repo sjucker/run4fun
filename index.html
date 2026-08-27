@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Next 5">
+<title>Next 5 Trainings — Valencia Marathon</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%8F%83%3C/text%3E%3C/svg%3E">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --ink: #16181d;
+  --ink-soft: #5b6270;
+  --ink-faint: #8c93a1;
+  --line: #e6e8ec;
+  --card: #fbfbfc;
+  --quality: #d1495b;
+  --mp: #7b4fa8;
+  --long: #2a6fb0;
+  --easy: #2f8f5b;
+  --group: #0f8a8a;
+  --race: #b8860b;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: max(18px, env(safe-area-inset-top)) 18px 48px; }
+
+header { border-bottom: 1px solid var(--line); padding-bottom: 16px; margin-bottom: 18px; }
+h1 { font-size: 19px; margin: 0 0 4px; letter-spacing: -0.01em; }
+.sub { color: var(--ink-soft); font-size: 13px; }
+.meta-row { display: flex; gap: 22px; margin-top: 14px; flex-wrap: wrap; }
+.meta { min-width: 88px; }
+.meta .k { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-faint); }
+.meta .v { font-size: 20px; font-weight: 650; letter-spacing: -0.02em; margin-top: 1px; }
+.meta .v small { font-size: 12px; font-weight: 400; color: var(--ink-soft); }
+
+.bar { height: 6px; border-radius: 3px; background: #eceef1; overflow: hidden; margin-top: 8px; }
+.bar > i { display: block; height: 100%; background: var(--long); border-radius: 3px; transition: width .4s; }
+
+.banner {
+  border: 1px solid #f0dcc0; background: #fdf8f0; color: #7a5a20;
+  border-radius: 8px; padding: 9px 12px; font-size: 13px; margin-bottom: 16px;
+}
+.banner.err { border-color: #f0cfcf; background: #fdf4f4; color: #8a3a3a; }
+
+h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--ink-faint);
+     margin: 26px 0 10px; font-weight: 600; }
+
+.card {
+  border: 1px solid var(--line); border-left: 3px solid var(--line);
+  border-radius: 8px; background: var(--card);
+  padding: 13px 15px; margin-bottom: 9px;
+}
+.card.next { background: #fff; box-shadow: 0 1px 3px rgba(20,24,32,.06); }
+.card-top { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.when { font-weight: 650; font-size: 15px; }
+.rel { font-size: 12px; color: var(--ink-faint); }
+.tag {
+  font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; font-weight: 700;
+  padding: 2px 7px; border-radius: 4px; color: #fff; white-space: nowrap;
+}
+.dist { margin-left: auto; font-weight: 650; font-size: 15px; white-space: nowrap; }
+.title { margin-top: 5px; font-weight: 550; }
+.pace { font-size: 13px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.detail { margin-top: 6px; font-size: 13.5px; color: var(--ink-soft); }
+.gym { display: inline-block; margin-top: 7px; font-size: 11.5px; color: var(--ink-faint);
+       border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; background: #fff; }
+
+.done { display: flex; align-items: baseline; gap: 10px; padding: 8px 2px;
+        border-bottom: 1px solid var(--line); font-size: 13.5px; flex-wrap: wrap; }
+.done:last-child { border-bottom: 0; }
+.done .d { width: 42px; color: var(--ink-faint); font-size: 12px; flex: none; }
+.done .n { flex: 1; min-width: 130px; }
+.done .a { font-variant-numeric: tabular-nums; color: var(--ink-soft); white-space: nowrap; }
+.tick { color: var(--easy); font-weight: 700; flex: none; }
+.cross { color: var(--ink-faint); font-weight: 700; flex: none; }
+
+footer { margin-top: 30px; padding-top: 14px; border-top: 1px solid var(--line);
+         font-size: 12px; color: var(--ink-faint); }
+footer p { margin: 0 0 6px; }
+.skel { color: var(--ink-faint); font-size: 13px; padding: 10px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Next 5 Trainings</h1>
+    <div class="sub">Valencia Marathon · Sunday 6 December 2026 · target 2:59:00 (4:14/km)</div>
+    <div class="meta-row">
+      <div class="meta"><div class="k">To race</div><div class="v" id="m-days">–</div></div>
+      <div class="meta"><div class="k">Plan week</div><div class="v" id="m-week">–</div></div>
+      <div class="meta" style="flex:1;min-width:180px">
+        <div class="k">This week</div>
+        <div class="v" id="m-km">–</div>
+        <div class="bar"><i id="m-bar" style="width:0%"></i></div>
+      </div>
+    </div>
+  </header>
+
+  <div id="banner"></div>
+
+  <h2>Up next</h2>
+  <div id="next"><div class="skel">Loading plan…</div></div>
+
+  <div id="week-section"></div>
+
+  <footer>
+    <p>Paces in min/km. Easy 5:00–5:30 · long 4:55–5:20 · MP 4:12–4:16 · threshold 3:58–4:08 · interval 3:42–3:52.</p>
+    <p id="stamp"></p>
+  </footer>
+</div>
+
+<script>
+"use strict";
+
+var RACE = "2026-12-06";
+
+/* ---------- plan: offsets from each Monday (0=Mon … 6=Sun) ---------- */
+var WEEKS = [
+{w:6, mon:"2026-08-17", target:64, s:[
+  {o:1,k:10,t:"quality",n:"6×1 km threshold",p:"3:58–4:08",x:"1.6 km w/u, 6×1 km @ 4:00–4:05 with 2 min jog, 1.6 km c/d. Hold the ceiling — if rep 1 is under 3:55, ease off.",g:1},
+  {o:2,k:9, t:"group",  n:"Group run",p:"~5:45",x:"Fixed social/recovery run. The slow pace is deliberate — don't chase it."},
+  {o:3,k:8, t:"mp",     n:"MP block",p:"4:12–4:16",x:"2 km w/u, 5 km @ MP, 1 km c/d."},
+  {o:5,k:12,t:"easy",   n:"Easy + strides",p:"5:10–5:25",x:"12 km easy, then 6×20 s strides. Keep it honestly easy — Sunday is the session that matters."},
+  {o:6,k:24,t:"long",   n:"Long run, MP finish",p:"5:00–5:15 → 4:12–4:16",x:"24 km: first 16 km easy, last 8 km @ MP. Gel at 45 and 90 min."}]},
+
+{w:7, mon:"2026-08-24", target:56, down:1, s:[
+  {o:1,k:8, t:"easy",   n:"Easy — back permitting",p:"5:10–5:30",x:"8 km easy, or 40 min elliptical if the back is still talking. This run is the gate for Wednesday: any symptom today, during it, or tomorrow morning and the race is off. Gym: nothing loaded through the spine.",g:1},
+  {o:2,k:13,t:"race",   n:"Sikinga-Lauf 7.2 km — if the back is clear",p:"3:50–3:55",x:"Untersiggenthal, 19:30 start, 3 laps of 2.4 km. 3 km w/u + strides, race, 2–3 km c/d. Open lap 1 at 3:55 and squeeze the last one. Lapped course — step off if the back speaks. FALLBACK: the usual 9 km group run @ ~5:45, or nothing at all."},
+  {o:3,k:8, t:"easy",   n:"Recovery",p:"5:10–5:30",x:"8 km easy. No MP, no strides — day after a race effort."},
+  {o:5,k:6, t:"easy",   n:"Easy + strides",p:"5:00–5:30",x:"6 km easy. Strides only if everything feels normal."},
+  {o:6,k:20,t:"long",   n:"Long run, steady",p:"4:55–5:15",x:"20 km steady, no MP block. Down week pulled forward — the point is to arrive at next week healthy."}]},
+
+{w:8, mon:"2026-08-31", target:68, s:[
+  {o:1,k:12,t:"quality",n:"5×1.6 km threshold",p:"3:58–4:05",x:"2 km w/u, 5×1.6 km @ 3:58–4:05 with 90 s jog, 2 km c/d. First real quality since the back — start at the slow end of the band.",g:1},
+  {o:2,k:9, t:"group",  n:"Group run",p:"~5:45",x:"Fixed social/recovery run."},
+  {o:3,k:14,t:"mp",     n:"8 km @ MP",p:"4:12–4:16",x:"3 km w/u, 8 km @ MP, 3 km c/d. Fresh legs — this is where 4:14 becomes routine."},
+  {o:5,k:8, t:"easy",   n:"Easy + strides",p:"5:00–5:30",x:"8 km easy + 6×20 s strides."},
+  {o:6,k:25,t:"long",   n:"Long run, 3×4 km MP",p:"4:55–5:15",x:"25 km with 3×4 km @ MP, 2 km easy float between. Gels at 45 and 90 min."}]},
+
+{w:9, mon:"2026-09-07", target:70, s:[
+  {o:1,k:13,t:"quality",n:"4×2 km threshold",p:"4:00–4:06",x:"2.5 km w/u, 4×2 km @ 4:00–4:06 with 2:30 jog, 2.5 km c/d.",g:1},
+  {o:2,k:9, t:"group",  n:"Group run",p:"~5:45",x:"Fixed social/recovery run."},
+  {o:3,k:15,t:"mp",     n:"10 km @ MP",p:"4:12–4:16",x:"3 km w/u, 10 km @ MP, 2 km c/d. Biggest fresh MP rep so far."},
+  {o:5,k:8, t:"easy",   n:"Easy + strides",p:"5:00–5:30",x:"8 km easy + 6×20 s strides."},
+  {o:6,k:25,t:"long",   n:"Long run, 10 km MP finish",p:"4:55–5:15 → MP",x:"25 km, last 10 km @ MP. Water every 5 km, gels at 45 and 90 min."}]},
+
+{w:10, mon:"2026-09-14", target:74, s:[
+  {o:1,k:13,t:"quality",n:"8×1 km",p:"3:56–4:02",x:"2 km w/u, 8×1 km @ 3:56–4:02 with 90 s jog, 2 km c/d.",g:1},
+  {o:2,k:9, t:"group",  n:"Group run",p:"~5:45",x:"Fixed social/recovery run."},
+  {o:3,k:16,t:"mp",     n:"2×6 km @ MP",p:"4:12–4:16",x:"2 km w/u, 2×6 km @ MP with 1 km float, 1 km c/d."},
+  {o:5,k:8, t:"easy",   n:"Easy + strides",p:"5:00–5:30",x:"8 km easy + 6×20 s strides."},
+  {o:6,k:28,t:"long",   n:"Long run, 8 km MP finish",p:"4:55–5:15 → MP",x:"28 km, last 8 km @ MP."}]},
+
+{w:11, mon:"2026-09-21", target:72, s:[
+  {o:1,k:12,t:"quality",n:"4×2 km threshold",p:"3:58–4:05",x:"2 km w/u, 4×2 km @ 3:58–4:05 with 2 min jog, 2 km c/d. Last real quality before the tune-up.",g:1},
+  {o:2,k:9, t:"group",  n:"Group run",p:"~5:45",x:"Fixed social/recovery run."},
+  {o:3,k:13,t:"easy",   n:"Relaxed medium-long",p:"5:00–5:20",x:"13 km relaxed. No MP — race week."},
+  {o:4,k:6, t:"easy",   n:"Shakeout",p:"5:10–5:30",x:"6 km easy. Gym light — mobility only.",g:1},
+  {o:5,k:6, t:"easy",   n:"Pre-race + strides",p:"5:10–5:30",x:"6 km + 6×20 s strides. Sharp, not tired."},
+  {o:6,k:26,t:"race",   n:"HALF MARATHON tune-up",p:"3:57–4:02",x:"3 km w/u, 21.1 km race @ 3:57–4:02, 2 km c/d. 1:24 or better confirms sub-3 is on."}]},
+
+{w:12, mon:"2026-09-28", target:58, down:1, s:[
+  {o:1,k:10,t:"easy",   n:"Easy + strides",p:"5:00–5:30",x:"10 km easy + 6×20 s strides. Post-race recovery — no hard running.",g:1},
+  {o:2,k:9, t:"group",  n:"Group run",p:"~5:45",x:"Fixed social/recovery run."},
+  {o:3,k:11,t:"mp",     n:"5 km @ MP",p:"4:12–4:16",x:"3 km w/u, 5 km @ MP, 3 km c/d."},
+  {o:5,k:8, t:"easy",   n:"Easy + strides",p:"5:00–5:30",x:"8 km easy + 6×20 s strides."},
+  {o:6,k:20,t:"long",   n:"Long run, steady",p:"4:55–5:15",x:"20 km steady. Down week."}]},
+
+{w:13, mon:"2026-10-05", target:76, s:[
+  {o:1,k:14,t:"quality",n:"5×2 km threshold",p:"4:00–4:06",x:"2 km w/u, 5×2 km @ 4:00–4:06 with 2 min jog, 2 km c/d.",g:1},
+  {o:2,k:9, t:"group",  n:"Group run",p:"~5:45",x:"Fixed social/recovery run."},
+  {o:3,k:16,t:"mp",     n:"10 km @ MP",p:"4:12–4:16",x:"3 km w/u, 10 km @ MP, 3 km c/d."},
+  {o:5,k:8, t:"easy",   n:"Easy + strides",p:"5:00–5:30",x:"8 km easy + 6×20 s strides."},
+  {o:6,k:29,t:"long",   n:"Long run, 10 km MP finish",p:"4:55–5:15 → MP",x:"29 km, last 10 km @ MP. Full race-morning fuelling rehearsal."}]},
+
+{w:14, mon:"2026-10-12", target:80, s:[
+  {o:1,k:14,t:"quality",n:"10×1 km",p:"3:54–4:00",x:"2 km w/u, 10×1 km @ 3:54–4:00 with 90 s jog, 2 km c/d. Biggest interval session of the block.",g:1},
+  {o:2,k:9, t:"group",  n:"Group run",p:"~5:45",x:"Fixed social/recovery run."},
+  {o:3,k:17,t:"mp",     n:"2×7 km @ MP",p:"4:12–4:16",x:"2 km w/u, 2×7 km @ MP with 1 km float, 1 km c/d."},
+  {o:5,k:8, t:"easy",   n:"Easy + strides",p:"5:00–5:30",x:"8 km easy + 6×20 s strides."},
+  {o:6,k:32,t:"long",   n:"Longest run, 12 km MP finish",p:"4:55–5:15 → MP",x:"32 km, last 12 km @ MP. Race shoes, race gels, race breakfast."}]},
+
+{w:15, mon:"2026-10-19", target:64, down:1, s:[
+  {o:1,k:11,t:"quality",n:"6×1 km",p:"3:56–4:02",x:"2 km w/u, 6×1 km @ 3:56–4:02 with 2 min jog, 2 km c/d.",g:1},
+  {o:2,k:9, t:"group",  n:"Group run",p:"~5:45",x:"Fixed social/recovery run."},
+  {o:3,k:12,t:"mp",     n:"6 km @ MP",p:"4:12–4:16",x:"3 km w/u, 6 km @ MP, 3 km c/d."},
+  {o:5,k:8, t:"easy",   n:"Easy + strides",p:"5:00–5:30",x:"8 km easy + 6×20 s strides."},
+  {o:6,k:24,t:"long",   n:"Long run, steady",p:"4:55–5:15",x:"24 km steady. Down week before the peak."}]},
+
+{w:16, mon:"2026-10-26", target:82, peak:1, s:[
+  {o:1,k:14,t:"quality",n:"6×2 km threshold",p:"4:00–4:06",x:"2 km w/u, 6×2 km @ 4:00–4:06 with 2 min jog, 2 km c/d.",g:1},
+  {o:2,k:9, t:"group",  n:"Group run",p:"~5:45",x:"Fixed social/recovery run."},
+  {o:3,k:18,t:"mp",     n:"12 km @ MP",p:"4:12–4:16",x:"3 km w/u, 12 km @ MP, 3 km c/d. If this feels controlled, the marathon is there."},
+  {o:5,k:8, t:"easy",   n:"Easy + strides",p:"5:00–5:30",x:"8 km easy + 6×20 s strides."},
+  {o:6,k:33,t:"long",   n:"Peak long run, 14 km MP finish",p:"4:55–5:15 → MP",x:"33 km, last 14 km @ MP. Peak week — eat and sleep accordingly."}]},
+
+{w:17, mon:"2026-11-02", target:74, s:[
+  {o:1,k:13,t:"quality",n:"8×1 km",p:"3:54–4:00",x:"2 km w/u, 8×1 km @ 3:54–4:00 with 90 s jog, 2 km c/d.",g:1},
+  {o:2,k:9, t:"group",  n:"Group run",p:"~5:45",x:"Fixed social/recovery run."},
+  {o:3,k:16,t:"mp",     n:"10 km @ MP",p:"4:12–4:16",x:"3 km w/u, 10 km @ MP, 3 km c/d."},
+  {o:5,k:8, t:"easy",   n:"Easy + strides",p:"5:00–5:30",x:"8 km easy + 6×20 s strides."},
+  {o:6,k:28,t:"long",   n:"Long run, 3×5 km MP",p:"4:55–5:15",x:"28 km with 3×5 km @ MP, 1 km float between."}]},
+
+{w:18, mon:"2026-11-09", target:62, s:[
+  {o:1,k:12,t:"quality",n:"5×1.6 km threshold",p:"3:58–4:04",x:"2 km w/u, 5×1.6 km @ 3:58–4:04 with 90 s jog, 2 km c/d.",g:1},
+  {o:2,k:9, t:"group",  n:"Group run",p:"~5:45",x:"Fixed social/recovery run."},
+  {o:3,k:13,t:"mp",     n:"8 km @ MP",p:"4:12–4:16",x:"3 km w/u, 8 km @ MP, 2 km c/d."},
+  {o:5,k:8, t:"easy",   n:"Easy + strides",p:"5:00–5:30",x:"8 km easy + 6×20 s strides."},
+  {o:6,k:20,t:"long",   n:"Long run, 6 km MP finish",p:"4:55–5:15 → MP",x:"20 km, last 6 km @ MP. Taper starts — volume drops, intensity stays."}]},
+
+{w:19, mon:"2026-11-16", target:50, s:[
+  {o:1,k:11,t:"quality",n:"6×1 km",p:"3:56–4:02",x:"2 km w/u, 6×1 km @ 3:56–4:02 with 2 min jog, 2 km c/d.",g:1},
+  {o:2,k:9, t:"group",  n:"Group run",p:"~5:45",x:"Fixed social/recovery run."},
+  {o:3,k:10,t:"mp",     n:"5 km @ MP",p:"4:12–4:16",x:"2 km w/u, 5 km @ MP, 3 km c/d."},
+  {o:5,k:6, t:"easy",   n:"Easy + strides",p:"5:00–5:30",x:"6 km easy + 6×20 s strides."},
+  {o:6,k:14,t:"long",   n:"Long run, 5 km MP finish",p:"4:55–5:15 → MP",x:"14 km, last 5 km @ MP."}]},
+
+{w:20, mon:"2026-11-23", target:40, s:[
+  {o:1,k:10,t:"quality",n:"5×1 km",p:"3:58–4:04",x:"2 km w/u, 5×1 km @ 3:58–4:04 with 2 min jog, 2 km c/d. Sharpening, not training.",g:1},
+  {o:2,k:9, t:"group",  n:"Group run",p:"~5:45",x:"Fixed social/recovery run."},
+  {o:3,k:8, t:"mp",     n:"4 km @ MP",p:"4:12–4:16",x:"2 km w/u, 4 km @ MP, 2 km c/d."},
+  {o:5,k:5, t:"easy",   n:"Easy + strides",p:"5:00–5:30",x:"5 km easy + 4×20 s strides."},
+  {o:6,k:8, t:"easy",   n:"Easy",p:"5:10–5:30",x:"8 km easy. Resist adding anything — the work is done."}]},
+
+{w:21, mon:"2026-11-30", target:65, s:[
+  {o:1,k:7, t:"quality",n:"6×400 m",p:"3:40–3:48",x:"2 km w/u, 6×400 m @ 3:40–3:48 with 400 m jog, 2 km c/d. Feels fast, costs nothing.",g:1},
+  {o:2,k:6, t:"easy",   n:"Easy — travel day",p:"5:10–5:30",x:"6 km easy. Run before you fly to Valencia if you can."},
+  {o:3,k:5, t:"easy",   n:"Easy + strides",p:"5:10–5:30",x:"5 km + 4×20 s strides."},
+  {o:4,k:3, t:"easy",   n:"Shakeout",p:"5:10–5:30",x:"3 km shakeout. Expo, then off your feet. Carb-load day 1."},
+  {o:5,k:3, t:"easy",   n:"Pre-race primer",p:"5:10–5:30",x:"3 km + 3×1 min @ MP to wake the legs up. Carb-load day 2. Lay everything out tonight."},
+  {o:6,k:42.2,t:"race", n:"VALENCIA MARATHON",p:"4:14",x:"Target 2:59:00. First 5 km at 4:16–4:18, then settle onto 4:14. Gel every 35–40 min from 40 min. Do not bank time."}]}
+];
+
+var LABEL = {quality:"Quality", mp:"MP", long:"Long", easy:"Easy", group:"Group", race:"Race"};
+
+/* ---------- date helpers (all local, no UTC drift) ---------- */
+function fmt(d){ return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+function parse(iso){ var p=iso.split("-").map(Number); return new Date(p[0],p[1]-1,p[2]); }
+function addDays(iso,n){ var d=parse(iso); d.setDate(d.getDate()+n); return fmt(d); }
+function diff(a,b){ return Math.round((parse(b)-parse(a))/86400000); }
+function pretty(iso){
+  var d=parse(iso);
+  return d.toLocaleDateString("en-GB",{weekday:"long"})+" "+d.getDate()+" "+d.toLocaleDateString("en-GB",{month:"short"});
+}
+function relWord(n){ return n===0?"today":(n===1?"tomorrow":"in "+n+" days"); }
+function paceOf(metres, secs){
+  if(!metres||!secs) return "";
+  var s = secs/(metres/1000);
+  return Math.floor(s/60)+":"+String(Math.round(s%60)).padStart(2,"0");
+}
+
+/* ---------- flatten plan ---------- */
+var SESSIONS = [];
+WEEKS.forEach(function(w){
+  w.s.forEach(function(s){
+    SESSIONS.push({date:addDays(w.mon,s.o), week:w.w, target:w.target, mon:w.mon,
+                   km:s.k, type:s.t, name:s.n, pace:s.p, detail:s.x, gym:!!s.g});
+  });
+});
+SESSIONS.sort(function(a,b){ return a.date<b.date?-1:1; });
+
+var TODAY = fmt(new Date());
+
+function currentWeek(){
+  var best=null;
+  WEEKS.forEach(function(w){
+    if(diff(w.mon,TODAY)>=0 && diff(w.mon,TODAY)<=6) best=w;
+  });
+  if(best) return best;
+  if(TODAY < WEEKS[0].mon) return WEEKS[0];
+  return WEEKS[WEEKS.length-1];
+}
+
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+function card(s, isFirst, n){
+  var col = "var(--"+s.type+")";
+  return '<div class="card'+(isFirst?" next":"")+'" style="border-left-color:'+col+'">'
+    + '<div class="card-top">'
+    +   '<span class="when">'+esc(pretty(s.date))+'</span>'
+    +   '<span class="rel">'+relWord(n)+'</span>'
+    +   '<span class="tag" style="background:'+col+'">'+LABEL[s.type]+'</span>'
+    +   '<span class="dist">'+s.km+' km</span>'
+    + '</div>'
+    + '<div class="title">'+esc(s.name)+' <span class="pace">· '+esc(s.pace)+'/km</span></div>'
+    + '<div class="detail">'+esc(s.detail)+'</div>'
+    + (s.gym?'<span class="gym">+ gym</span>':'')
+    + '</div>';
+}
+
+function render(kmByDate, dataOk, note){
+  var wk = currentWeek();
+
+  var weekPlan = SESSIONS.filter(function(s){ return s.week===wk.w; });
+  var done = {};
+  weekPlan.forEach(function(s){
+    var a = kmByDate[s.date];
+    if(a && a.km >= 0.6*s.km) done[s.date]=a;
+  });
+
+  var wkKm = 0;
+  for(var i=0;i<7;i++){
+    var d=addDays(wk.mon,i);
+    if(kmByDate[d]) wkKm += kmByDate[d].km;
+  }
+
+  document.getElementById("m-days").innerHTML = Math.max(0,diff(TODAY,RACE))+' <small>days</small>';
+  document.getElementById("m-week").innerHTML = 'W'+wk.w+' <small>of 21'+(wk.peak?" · peak":(wk.down?" · down":""))+'</small>';
+  document.getElementById("m-km").innerHTML = (dataOk? wkKm.toFixed(1) : "–")+' <small>/ '+wk.target+' km</small>';
+  document.getElementById("m-bar").style.width = Math.min(100, dataOk? wkKm/wk.target*100 : 0)+"%";
+
+  var next = SESSIONS.filter(function(s){ return s.date >= TODAY && !done[s.date]; }).slice(0,5);
+  document.getElementById("next").innerHTML = next.length
+    ? next.map(function(s,i){ return card(s,i===0,diff(TODAY,s.date)); }).join("")
+    : '<div class="skel">Plan complete. Well run.</div>';
+
+  var past = weekPlan.filter(function(s){ return s.date < TODAY; });
+  var html = "";
+  if(past.length && dataOk){
+    html += '<h2>Week '+wk.w+' so far</h2>';
+    past.forEach(function(s){
+      var a = kmByDate[s.date];
+      var ok = !!done[s.date];
+      html += '<div class="done">'
+        + '<span class="'+(ok?"tick":"cross")+'">'+(ok?"✓":"·")+'</span>'
+        + '<span class="d">'+parse(s.date).toLocaleDateString("en-GB",{weekday:"short"})+'</span>'
+        + '<span class="n">'+esc(s.name)+' <span class="pace">('+s.km+' km planned)</span></span>'
+        + '<span class="a">'+(a? a.km.toFixed(1)+' km · '+paceOf(a.m,a.t)+'/km' : 'not logged')+'</span>'
+        + '</div>';
+    });
+  }
+  document.getElementById("week-section").innerHTML = html;
+
+  document.getElementById("banner").innerHTML = note
+    ? '<div class="banner'+(dataOk?"":" err")+'">'+esc(note)+'</div>' : "";
+}
+
+/* ---------- Strava data ----------
+   Live from the Netlify function at /api/strava (credentials stay server-side).
+   Falls back to the committed data/activities.json snapshot if the function is
+   unavailable — e.g. running the page straight off the filesystem.            */
+function shape(j, live){
+  var days = j.days || {};
+  var kmByDate = {};
+  Object.keys(days).forEach(function(d){
+    kmByDate[d] = {km: days[d].km, m: days[d].km*1000, t: days[d].sec};
+  });
+  if(j.updated){
+    document.getElementById("stamp").textContent =
+      "Strava data " + new Date(j.updated).toLocaleString("en-GB") +
+      (live ? " · live via Netlify, cached 10 min." : " · offline snapshot.");
+  }
+  return kmByDate;
+}
+
+function loadData(){
+  fetch("/api/strava", {cache:"no-store"})
+    .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
+    .then(function(j){ render(shape(j, true), true, null); })
+    .catch(function(e){
+      console.warn("live Strava fetch failed, falling back to snapshot:", e.message);
+      fetch("./data/activities.json?t="+Date.now(), {cache:"no-store"})
+        .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
+        .then(function(j){
+          var hrs = j.updated ? (Date.now()-new Date(j.updated).getTime())/3600000 : 0;
+          render(shape(j, false), true,
+            "Live Strava fetch failed — showing a snapshot from " + Math.round(hrs) +
+            " hours ago. Check the Netlify function logs if this persists.");
+        })
+        .catch(function(e2){
+          render({}, false, "No Strava data available ("+e2.message+") — showing the plan only, with nothing checked off.");
+        });
+    });
+}
+
+render({}, false, null);
+loadData();
+</script>
+</body>
+</html>
