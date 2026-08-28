@@ -10,7 +10,19 @@ netlify/functions/strava.mjs   serverless proxy to the Strava API
 netlify.toml                   publish + function config
 data/activities.json           offline fallback snapshot
 TRAINING_LOG.md                block history and standing watch-items
+sync.ps1                       pull, commit, push in one command
 ```
+
+## Syncing changes
+
+Claude edits the files here but has no network route to GitHub and no access to the SSH key, so it can't push. After any change:
+
+```powershell
+.\sync.ps1                      # timestamped commit message
+.\sync.ps1 "swap Sat and Sun"   # your own message
+```
+
+It pulls with `--rebase --autostash` first, commits only if something actually changed, and pushes only if there's something ahead of the remote.
 
 ## How the Strava check-off works
 
