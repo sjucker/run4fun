@@ -160,7 +160,7 @@ var WEEKS = [
   {o:6,k:6, t:"easy",   n:"Easy + strides",p:"5:00–5:30",x:"6 km easy, day after the long run. Strides only if everything feels normal."}]},
 
 {w:8, mon:"2026-08-31", target:68, s:[
-  {o:1,k:12,t:"quality",n:"5×1.6 km threshold",p:"3:58–4:05",x:"2 km w/u, 5×1.6 km @ 3:58–4:05 with 90 s jog, 2 km c/d. First real quality since the back — start at the slow end of the band.",g:1},
+  {o:0,k:12,t:"quality",n:"5×1.6 km threshold",p:"3:58–4:05",x:"2 km w/u, 5×1.6 km @ 3:58–4:05 with 90 s jog, 2 km c/d. First real quality since the back — start at the slow end of the band. Moved from Tue to Mon: three days off after the race means fresh legs today. Tuesday becomes gym only.",g:1},
   {o:2,k:9, t:"group",  n:"Group run",p:"~5:45",x:"Fixed social/recovery run."},
   {o:3,k:14,t:"mp",     n:"8 km @ MP",p:"4:12–4:16",x:"3 km w/u, 8 km @ MP, 3 km c/d. Fresh legs — this is where 4:14 becomes routine."},
   {o:5,k:8, t:"easy",   n:"Easy + strides",p:"5:00–5:30",x:"8 km easy + 6×20 s strides."},
@@ -325,11 +325,11 @@ function isDone(s, kmByDate){
   return (a && a.km >= 0.6*s.km) ? a : null;
 }
 
-/* a planned day with no session: Monday is rest, Friday is gym, anything else is a gap */
+/* a planned day with no session: Monday is rest, Tue/Fri are gym, anything else is a gap */
 function offDay(iso){
   var dow = parse(iso).getDay();          // 0=Sun … 6=Sat
   if(dow===1) return {label:"Rest day", text:"Nothing planned. Walk, stretch, sleep — this is part of the training."};
-  if(dow===5) return {label:"Gym day",  text:"No run planned. Strength session, then stay off the legs."};
+  if(dow===2 || dow===5) return {label:"Gym day", text:"No run planned. Strength session, then stay off the legs."};
   return {label:"No session", text:"Nothing scheduled for today."};
 }
 

@@ -34,7 +34,16 @@ stopped time — **back flared up**. Not a discipline problem.
 week pushed to 31 Aug. Mon elliptical + weights. Tue 8 km @ 5:34 clean. Wed raced the
 **Sikinga-Lauf 7.2 km in 28:01** (3:54/km on official distance, 75 m climb, 19:30 start, no
 taper, cadence 92, 8 PRs) — roughly equivalent to a 3:02–3:03 marathon, encouraging given the
-context. Warm-up 2.3 km, no cool-down logged.
+context. Warm-up 2.3 km, no cool-down logged. Thu 7.7 km @ 5:48 recovery. Fri gym + elliptical.
+**Sat 29 Aug long run did happen** — 21.9 km @ 5:02, every km between 4:56 and 5:07, HR 136→167
+(avg 152), no MP block as prescribed. Textbook steady long run and the back held. Sun 6 km easy
+missed. Week closed at **46.9 km vs 56 target** — the "25.1 km / long run missed" note in an
+earlier version of this entry was written before the Saturday run appeared and was wrong.
+Long-run drought over.
+
+**W8 (31 Aug–6 Sep)** — target 68. Tue threshold **moved to Mon 31 Aug** (three days off after
+the race = fresh legs; Tuesday becomes gym only). Week km unchanged. Long run is the priority
+session — it cannot slip a third weekend.
 
 ## Standing watch-items
 
