@@ -45,6 +45,44 @@ Long-run drought over.
 the race = fresh legs; Tuesday becomes gym only). Week km unchanged. Long run is the priority
 session — it cannot slip a third weekend.
 
+**W8 (31 Aug–6 Sep)** — **62.3 km vs 68 target**, 4 runs. Best week of the block.
+Mon 5×1.6 km threshold: 4:01 / 3:57 / 3:56 / 3:59 / 3:55, HR 158→174 — three reps under the
+3:58 floor but far more controlled than W5, call it a pass. Wed group run 8.9 km @ 5:52.
+**Thu 8 km @ MP at 4:12/km, HR 164** — the session that always slips, executed on fresh legs and
+dead-centre of the band. Sat 8 km easy missed. **Sun 6 Sep long run 25.7 km with 3×4 km @ MP:
+4:11 / 4:13 / 4:10, HR 161 / 161 / 165 (max 175), floats 5:00–5:30, w/u 5:22, c/d 5:13.**
+Three MP reps at the same HR the 5 km MP block cost in W5 — clearest sub-3 signal yet. 23 min
+elapsed-vs-moving gap (lakeside crossings). Back silent all week.
+*Correction: the 6 Sep review recorded this week as 36.6 km with no long run — the Sunday
+activity had not synced at the time. Same late-upload pattern as W7 (29 Aug). Read Sunday runs
+with a day's lag before calling a long run missed.*
+
+**W9 (7–13 Sep)** — **63.2 km vs 70 target**, 5 runs, longest 21.6 km. Tue threshold cut to
+**2×2 km + 1×1 km (4:00 / 4:00 / 4:06, HR 161 / 164 / 158)** vs 4×2 km prescribed — 9.1 km not 13;
+legs still tired from the 25.7 km + 3×4 km MP long run 48 h earlier. Reasonable, not discipline,
+and every rep inside the band — first fully compliant threshold session of the block. Wed group
+run 8.9 km @ 5:49, HR 118. **Thu 10 km MP delivered as 2×5 km with a 1 km float: 4:12 (HR 160) /
+4:08 (HR 167, max 177)**, 16.6 km total — the session that usually slips, executed in full;
+second rep 4 s/km hot. Weekend inverted: **Sat 21.6 km @ 5:21, HR 136 avg**, every km 5:16–5:36,
+no MP block, against a prescribed Sun 25 km with 10 km MP finish; Sun instead 7.0 km with
+**2×2 km @ 4:01 / 3:58** (HR 161 / 167, max 178). Back silent all week. Net: the fast work is
+landing and the long run isn't — 19 km of MP/threshold in a 63 km week is a high ratio, and the
+longest run of the block is still the 25.7 km of 6 Sep.
+
+**W10 (14–20 Sep)** — **rewritten, target 74 → 61.** City trip Sat 19–Sun 20: no run possible
+Saturday, easy only Sunday evening. Sat 8 km easy dropped; Sun 28 km long run displaced to
+**Mon 21 Sep**; Friday 18 becomes a **15 km medium-long + gym** (last run before travel, partial
+stand-in for the long run); Sun 20 is 8 km easy in the evening. Tue 8×1 km and Thu 2×6 km MP
+unchanged, with Tuesday to be held at the 4:02 end. Separately noted before the trip came up:
+the original 74 km / 28 km long was too steep anyway (+17% and +30% on W9's actuals).
+
+**W11 (21–27 Sep)** — **rewritten, target 72 → 77.** Mon 21 carries the displaced long run,
+**24 km steady, no MP finish**. Tuesday's 4×2 km threshold **dropped** — Sunday's half marathon
+tune-up is the week's quality and a long run six days out is enough load. Thu trimmed 13 → 8,
+Fri shakeout 6 → 5 (mobility-only gym), Sat pre-race 6 → 5. Race unchanged: 21.1 km @ 3:57–4:02,
+1:24 the marker. Gate: if the legs are still heavy on Thursday, the race takes priority and
+Fri/Sat shrink further.
+
 ## Standing watch-items
 
 1. **Interval discipline.** Tendency to run threshold reps at 5 km pace. The prescription
