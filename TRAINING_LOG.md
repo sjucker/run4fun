@@ -77,11 +77,30 @@ unchanged, with Tuesday to be held at the 4:02 end. Separately noted before the 
 the original 74 km / 28 km long was too steep anyway (+17% and +30% on W9's actuals).
 
 **W11 (21–27 Sep)** — **rewritten, target 72 → 77.** Mon 21 carries the displaced long run,
-**24 km steady, no MP finish**. Tuesday's 4×2 km threshold **dropped** — Sunday's half marathon
-tune-up is the week's quality and a long run six days out is enough load. Thu trimmed 13 → 8,
-Fri shakeout 6 → 5 (mobility-only gym), Sat pre-race 6 → 5. Race unchanged: 21.1 km @ 3:57–4:02,
-1:24 the marker. Gate: if the legs are still heavy on Thursday, the race takes priority and
-Fri/Sat shrink further.
+**24 km steady, no MP finish**. Tuesday's 4×2 km threshold **dropped** — a long run six days out
+is enough load. Thu trimmed 13 → 8, Fri shakeout 6 → 5, Sat 6 → 5. **Sun 27 half marathon
+downgraded from a race to a controlled 21.1 km @ MP (4:12–4:16)** once Ascona-Locarno was added
+on 11 Oct — Stefan's call, one benchmark not two. It becomes the largest marathon-specific block
+of the plan and the full fuelling rehearsal.
+
+## Ascona-Locarno Half Marathon — Sun 11 Oct 2026, goal ~1:26 (4:05/km)
+
+Added at Stefan's request; sits on what was W13's 29 km long run with a 10 km MP finish. Run as
+a **proper race with a short taper**, so W13 loses its long run. Knock-on changes:
+
+- **W12 (28 Sep–4 Oct)** — target 58 → **65**, and the `down` flag removed. Leaving it as a down
+  week next to a taper week would have put two light weeks back to back and made W14's jump to a
+  32 km long run too steep. Thu MP 5 → 7 km, Sun long run 20 → 25 km (steady, seven days out).
+- **W13 (5–11 Oct)** — target 76 → **61**. Tue 5×2 km threshold cut to 5×1 km sharpener; Thu's
+  10 km MP block removed, now 10 km easy; Fri gym only; Sat 5 km + strides and travel; Sun race
+  26 km total (3 w/u + 21.1 + 2 c/d) at 4:02–4:07.
+- **W14 (12–18 Oct)** — target 80 → **76**. The Tue 10×1 km — "biggest interval session of the
+  block", scheduled 48 h after a hard half — is **dropped** and replaced with 10 km easy; the race
+  covers that stimulus. Thu 2×7 km MP kept with a get-out (cut to 2×5 km if the legs aren't back).
+  Sun 18 Oct's 32 km with 12 km MP is unchanged and is now the priority session of the block.
+
+Watch: 27 Sep (21 km MP), 11 Oct (HM race) and 18 Oct (32 km / 12 km MP) inside 22 days is the
+densest stretch of the plan. If anything is going to break, it breaks here.
 
 ## Standing watch-items
 
