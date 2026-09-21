@@ -105,10 +105,29 @@ Thu MP 7 → 8 km (now the only MP session before Ascona, with a get-out), Sun l
 W12 sits between a 35 km run and a half marathon, so it is a recovery week whether the plan says
 so or not.
 
-Net marathon-specific cost: the plan loses 21 km of MP running and gains 35 km of easy volume.
-Fine as a one-off — it is a real fuelling rehearsal and time-on-feet block — but it leaves only
-8 km of MP work before 11 Oct. **W14's 18 Oct session (32 km with 12 km @ MP) is now unambiguously
-the most important run of the whole block.**
+**Revised same day, at Stefan's request — MP work goes back into the event, and Wednesday
+becomes a quality session.** Two changes on top of the above:
+
+- **Sunday is now 35 km with an 8.4 km MP finish**: laps 1–36 easy (25.2 km @ 5:20–5:35),
+  laps 37–48 @ 4:12–4:16, laps 49–50 easy. MP on 25 km of fatigue is *more* marathon-specific
+  than the 21 km MP block it replaced, even though it is less MP volume — it rehearses the last
+  hour of Valencia rather than the middle. Explicit get-out on the card: bin the MP block if the
+  easy laps feel heavy.
+- **Wednesday 23 Sep: no group run**, so it takes back the dropped threshold session as
+  **3×2 km @ 4:00–4:06** (11 km total). Three reps not four, 2 km not 1 km. Thu trimmed 7 → 6
+  to pay for it. Week target 79 → **80**.
+
+This makes W11 a peak-shaped week arriving three weeks early: **80 km with ~14 km of quality**
+against a best-ever actual of 63.2 km. Justified only by the down week that follows it. If
+anything in this block breaks, this is the week it happens — watch the back and the Ascona taper.
+
+Consequently **W12's Thursday MP block was removed** (8 km MP → 13 km easy, optional 4 km MP only
+if genuinely fresh). W12 stays at 57 km but is now near-zero intensity: 35 km with MP on 27 Sep
+→ easy recovery week → Ascona 11 Oct is the arc.
+
+Net marathon-specific position: the plan trades 21 km of mid-run MP for 8.4 km of fatigued MP
+plus 6 km of threshold. **W14's 18 Oct session (32 km with 12 km @ MP) is still the most
+important run of the block.**
 
 ## Ascona-Locarno Half Marathon — Sun 11 Oct 2026, goal ~1:26 (4:05/km)
 
