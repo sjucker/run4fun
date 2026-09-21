@@ -83,6 +83,33 @@ downgraded from a race to a controlled 21.1 km @ MP (4:12–4:16)** once Ascona-
 on 11 Oct — Stefan's call, one benchmark not two. It becomes the largest marathon-specific block
 of the plan and the full fuelling rehearsal.
 
+**W11 rewritten again (21 Sep)** — target 77 → **79**. Stefan is running the **Lions Joggathlon**
+on Sun 27 Sep, 35 km at easy pace, so the 21 km @ MP block is gone. Midweek cut to make room:
+Thu 8 → 7, **Friday's 5 km shakeout dropped** (gym only), Sat 5 → 4 and no strides. The week is
+now two long runs (Mon's 24 km, done at 4:54, and Sunday's 35 km) plus 20 km of filler.
+Consequences accepted knowingly: 79 km would be his biggest week of the block by 16 km on actuals,
+and 35 km is +36% on his longest run (25.7 km, 6 Sep). Both are tolerable **only** because the
+intensity is near zero — the whole thing hinges on him running 5:20–5:35 rather than his habitual
+4:55. Get-out written into the card: stop at 40 laps / 28 km if the first hour feels heavy.
+
+## Lions Joggathlon — Sun 27 Sep 2026, 35 km easy
+
+Platzspitz Park, Zürich HB. Start window 09:00–15:00, **700 m jogging lap → 50 laps**, per-lap
+sponsorship, isotonic drinks on course, enter/exit and pause freely. Lapped format is a genuine
+advantage: aid every ~4 min, and he can stop at any lap without a walk home. Two risks to watch —
+(1) per-lap sponsorship rewards more laps, so the 50-lap decision must be made before the start,
+and (2) 50 same-direction turns on a back with an August flare-up.
+
+Knock-on: **W12 (28 Sep–4 Oct) target 65 → 57, `down` flag restored.** Tue 10 → 8 very easy,
+Thu MP 7 → 8 km (now the only MP session before Ascona, with a get-out), Sun long 25 → 20 km.
+W12 sits between a 35 km run and a half marathon, so it is a recovery week whether the plan says
+so or not.
+
+Net marathon-specific cost: the plan loses 21 km of MP running and gains 35 km of easy volume.
+Fine as a one-off — it is a real fuelling rehearsal and time-on-feet block — but it leaves only
+8 km of MP work before 11 Oct. **W14's 18 Oct session (32 km with 12 km @ MP) is now unambiguously
+the most important run of the whole block.**
+
 ## Ascona-Locarno Half Marathon — Sun 11 Oct 2026, goal ~1:26 (4:05/km)
 
 Added at Stefan's request; sits on what was W13's 29 km long run with a 10 km MP finish. Run as
