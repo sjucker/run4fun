@@ -76,6 +76,8 @@ stand-in for the long run); Sun 20 is 8 km easy in the evening. Tue 8×1 km and 
 unchanged, with Tuesday to be held at the 4:02 end. Separately noted before the trip came up:
 the original 74 km / 28 km long was too steep anyway (+17% and +30% on W9's actuals).
 
+**W10 (14–20 Sep)** — **29.7 km vs 61 target**, 3 runs, longest 11.3 km, no long run landed (shifted to Mon 21). Tue 8×1 km all 8 reps completed but drifted fast: 3:59 / 3:58 / 3:57 / 4:02 / 3:55 / 3:56 / 3:55 / **3:43** vs a 3:56–4:02 prescription — last rep at interval pace, not threshold. Thu's 2×6 km MP ran instead as a shortened 4/3/2 km progression (9 km quality) that also sped up each rep: 4:13 (on target, HR 161) / 4:08 (HR 170) / 4:00 (HR 172, max 181) — the closing segment nearer threshold effort than MP. Wed group run 7.6 km @ 5:47, clean. **Fri's 15 km medium-long and Sun's 8 km easy never appear in Strava** — travel losses beyond the Saturday already planned for; flag if Sunday's still syncing. Back silent all week, no elliptical/gym-only days.
+
 **W11 (21–27 Sep)** — **rewritten, target 72 → 77.** Mon 21 carries the displaced long run,
 **24 km steady, no MP finish**. Tuesday's 4×2 km threshold **dropped** — a long run six days out
 is enough load. Thu trimmed 13 → 8, Fri shakeout 6 → 5, Sat 6 → 5. **Sun 27 half marathon
@@ -158,3 +160,8 @@ densest stretch of the plan. If anything is going to break, it breaks here.
    easy or elliptical only, physio if it doesn't settle in a few days. Numbness, radiating leg
    pain or leg weakness means a doctor, not a physio.
 4. **Fuelling.** At 65 kg with volume climbing, carbs before and during anything over 90 min.
+5. **Track pace reads fast.** Sessions on the 250m Track Liguster show faster GPS pace than
+   true effort. Flagged 23 Sep: a 3×2 km threshold showed 3:48–3:52/km (vs 4:00–4:06
+   prescribed) but HR (157–164 avg, 164–178 max) matched prior clean threshold sessions
+   (e.g. W8 Mon 158–174) rather than interval effort — Stefan confirmed the track reads short.
+   Judge track sessions by HR, not GPS pace; don't flag fast track splits as discipline issues.
