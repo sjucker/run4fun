@@ -131,6 +131,17 @@ Net marathon-specific position: the plan trades 21 km of mid-run MP for 8.4 km o
 plus 6 km of threshold. **W14's 18 Oct session (32 km with 12 km @ MP) is still the most
 important run of the block.**
 
+**W11 (21–27 Sep)** — **75.8 km vs 80 target**, 4 runs, longest 35.0 km (Lions Joggathlon).
+Mon 21 displaced long run 24.0 km @ 4:54, a shade quick as already noted. Wed 23 3×2 km
+threshold: GPS read 3:48 / 3:50 / 3:52 (Track Liguster under-reads — watch-item 5), HR
+157→164 / 160→169 / 164→178, rising cleanly across reps exactly like prior compliant
+threshold sessions — not a discipline issue. Thu 24 easy 7.3 km vs 6 km prescribed. **Sat 26
+4 km shakeout does not appear in Strava** — the only session unaccounted for; flag if it's
+still missing next week. **Sun 27 Lions Joggathlon: 35.0 km, both MP blocks landed inside
+band — 4:12/km (HR 169, max 176) then 4:14/km (HR 173, max 183, second block on 25 km of
+fatigue)**, easy laps averaged ~5:20/km at the top of the 5:20–5:35 prescription. Back silent
+all week. Biggest week of the block by a wide margin, run almost exactly as written.
+
 ## Ascona-Locarno Half Marathon — Sun 11 Oct 2026, goal ~1:26 (4:05/km)
 
 Added at Stefan's request; sits on what was W13's 29 km long run with a 10 km MP finish. Run as
