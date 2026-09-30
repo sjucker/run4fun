@@ -161,6 +161,27 @@ a **proper race with a short taper**, so W13 loses its long run. Knock-on change
 Watch: 27 Sep (21 km MP), 11 Oct (HM race) and 18 Oct (32 km / 12 km MP) inside 22 days is the
 densest stretch of the plan. If anything is going to break, it breaks here.
 
+**W11 (21–27 Sep) — actual: 75.8 km vs 80 target, 4 runs. Biggest week of the block by 12.6 km
+on actuals (previous best 63.2 km in W9), and the best single session of the block.**
+Mon 24.0 km @ 4:54. Wed 3×2 km threshold delivered as 9.5 km total rather than 11. Thu 7.3 km
+easy. Sat 4 km shakeout skipped. **Sun 27 Sep Lions Joggathlon: 35.0 km, 2:57:22 moving
+(3:18:39 elapsed — 21 min of lap-counting and drinks stops), avg HR 145, 2320 kcal.** Run as
+50 laps with the MP work split into 2×4.2 km rather than one 12-lap block: **4:12/km at HR 169
+(max 176) and 4:14/km at HR 172.5 (max 183)** — dead centre of the 4:12–4:16 band, at 25 km and
+30 km deep. Easy laps held 5:14–5:20 at HR 131–148, drifting to ~4:55 for the six laps before
+the MP work. Fastest 30 km in the run 2:49:46. Longest run of his life to date and the most
+marathon-specific session in the plan so far: MP pace on 25 km of fatigue at 169–172 bpm, where
+the same pace cost 177 bpm fresh in mid-August.
+
+**W12 (28 Sep–4 Oct) — rewritten 30 Sep, target 57 → 25.** Stefan came down with a **head cold**
+(runny nose, no fever reported) and correctly skipped Tue 29 and Wed 30. Two days after the
+biggest training week of the block — a textbook post-load immune dip, and exactly the risk flagged
+when W11 was built. Week rebuilt as conditional-only: Thu optional 5 km (above-the-neck symptoms
+only, no fever), Sat 6 km after 24 h clear, Sun long cut 20 → 14 km and only with two clear days.
+Friday gym dropped. **Ascona (11 Oct) is 11 days out and not yet in doubt — but if he is not
+symptom-free by Sat 3 Oct, W13 and the race itself need revisiting.** Nothing in W12 can improve
+Ascona; training through the cold could ruin it.
+
 ## Standing watch-items
 
 1. **Interval discipline.** Tendency to run threshold reps at 5 km pace. The prescription
