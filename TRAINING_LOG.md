@@ -182,6 +182,27 @@ Friday gym dropped. **Ascona (11 Oct) is 11 days out and not yet in doubt — bu
 symptom-free by Sat 3 Oct, W13 and the race itself need revisiting.** Nothing in W12 can improve
 Ascona; training through the cold could ruin it.
 
+**W12 (28 Sep–4 Oct) — actual: 29.7 km vs the 25 km illness-adjusted target, 3 runs.** Tue/Wed
+lost to the cold. Thu 6.2 km @ 5:33 (correctly slow). Fri 8.9 km @ 5:20 with Ueli — not
+prescribed, but easy and harmless. **Sat 3 Oct 14.6 km with a 5 km block at 3:56/km, HR 172 avg
+(max 184)** — logged as "5 km @4:00", actually 3:56, i.e. the fast end of the threshold band;
+5 km split 19:43. Sunday skipped for time. So the long run moved to Saturday and acquired a
+threshold block three days after a head cold. It went fine and the cold has not returned, but
+this is the standing watch-item again: feeling good converted a prescribed steady run into a
+quality session, unasked.
+
+**W13 (5–11 Oct) — target 61 → 57, race week.** Saturday's 5 km at 3:56 *was* the sharpener, so
+Tue's 5×1 km cut to **3×1 km @ 4:00–4:05 with 3 min jog** (11 → 9 km) and Thu trimmed 10 → 8 km
+with strides. Eight days off a cold, five days out from the goal race: nothing this week can add
+fitness, and freshness is worth more than a session.
+
+**Ascona prediction, read off the 3 Oct block.** 5 km at 3:56 at HR 172 (max 184, against a
+seen max of 188) was firm but not maximal. Riegel off a true ~19:00–19:15 5 km lands at
+**1:27–1:28**; the 1:26 goal is the stretch end rather than the expectation. Marathon equivalents:
+1:26 → ~2:59, 1:27 → ~3:01, 1:28 → ~3:03. Riegel is pessimistic for runners whose endurance
+outstrips their speed, which after the 27 Sep Joggathlon clearly describes him — so 1:27 should
+not be read as sub-3 slipping away. Plan: open at 4:05–4:07, decide at 15 km.
+
 ## Standing watch-items
 
 1. **Interval discipline.** Tendency to run threshold reps at 5 km pace. The prescription
