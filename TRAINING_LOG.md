@@ -203,6 +203,26 @@ seen max of 188) was firm but not maximal. Riegel off a true ~19:00–19:15 5 km
 outstrips their speed, which after the 27 Sep Joggathlon clearly describes him — so 1:27 should
 not be read as sub-3 slipping away. Plan: open at 4:05–4:07, decide at 15 km.
 
+**W13 rewritten 6 Oct — FEVER. Target 57 → 25, `down` flag set.** Stefan reported a low fever on
+Tue 6 Oct and cancelled Tue and Wed. This is a material escalation from last week's head cold:
+above-the-neck became systemic. Tue–Fri are now complete rest, Sat is a conditional 4 km shakeout
+(24 h fever-free, no paracetamol masking), and **Ascona on 11 Oct is downgraded from a race to a
+decision made on Saturday morning** — start only if the fever broke by Wednesday and he feels
+normal by Saturday, and then at 4:12–4:16 as a controlled MP run rather than 4:05 as a race.
+Fever past Thursday, or any chest tightness, breathlessness at rest or palpitations → DNS, and
+no travel.
+
+**Second illness in eight days.** The pattern matters more than either episode: 75.8 km peak week
+→ 35 km event → head cold → a 5 km at 3:56 three days into recovery → fever. He is running his
+immune system close to the edge. Sleep and carbohydrate intake are the levers; at 65 kg with this
+load, under-fuelling is the most likely contributor.
+
+**Knock-on to watch:** W14 (12–18 Oct) still carries Thu 2×7 km MP and **Sun 18 Oct's 32 km with
+12 km @ MP — the most important run of the block**. If the fever runs past Thursday, W14 needs
+softening rather than the 32 km being attempted on an unrecovered athlete. Decide on W14 at the
+weekend, once the illness trajectory is clear. Moving the 32 km to W15 (currently a 64 km down
+week with a 24 km steady long run) is the obvious escape route and costs little.
+
 ## Standing watch-items
 
 1. **Interval discipline.** Tendency to run threshold reps at 5 km pace. The prescription
