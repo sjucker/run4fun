@@ -238,3 +238,13 @@ week with a 24 km steady long run) is the obvious escape route and costs little.
    prescribed) but HR (157–164 avg, 164–178 max) matched prior clean threshold sessions
    (e.g. W8 Mon 158–174) rather than interval effort — Stefan confirmed the track reads short.
    Judge track sessions by HR, not GPS pace; don't flag fast track splits as discipline issues.
+
+**W14 (12–18 Oct) — provisional, written Sun 18 Oct 20:00 (Sunday run not yet in Strava).** Ascona-Locarno
+Sun 11 Oct **was run**: 21.1 km in 1:29:54 (4:15/km, HR/effort not reviewed), i.e. as the controlled
+MP run the plan asked for, not a race — the fever-week decision resolved in favour of starting. **CORRECTION (Stefan, 18 Oct): he was still symptomatic (runny nose, scratchy throat) on race day and had to slow down in the last third — so it was a harder, fading effort, not a controlled 4:15 run. Throat still slightly raspy a week later, nose clear.**
+Mon 12 rest. Tue 13 5.9 km easy (vs 10). Wed group run absent. Thu 15 6.4 km with **4.0 km @ 4:14.6, HR 162**
+(vs 2×7 km MP prescribed — shortened, but dead on pace). Fri 16 10.9 km with **5.0 km @ 4:14.6, HR 159**
+(unprescribed second MP session, again perfectly paced, HR lower than 15 Oct). Sat 17 10.1 km easy @ 5:42.
+**Sun 18 Oct 32 km / 12 km MP: nothing in Strava at 20:00.** Mon–Sat total 33.3 km vs 76 target. Check
+Monday for a late sync (pattern seen 29 Aug, 6 Sep) before calling it missed. If it truly didn't happen,
+the 32 km goes into W15 (swap with the 24 km steady) rather than being dropped.
