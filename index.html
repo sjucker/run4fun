@@ -224,12 +224,13 @@ var WEEKS = [
   {o:5,k:8, t:"easy",   n:"Easy + strides",p:"5:00–5:30",x:"8 km easy + 6×20 s strides."},
   {o:6,k:28,t:"long",   n:"Long run, 3×5 km MP",p:"4:55–5:15",x:"28 km with 3×5 km @ MP, 1 km float between. Fuel: Tropical Fruit only, every 22 min, six or seven of them. Save the caffeine — you have used it twice already this block."}]},
 
-{w:18, mon:"2026-11-09", target:62, s:[
-  {o:1,k:12,t:"quality",n:"5×1.6 km threshold",p:"3:58–4:04",x:"2 km w/u, 5×1.6 km @ 3:58–4:04 with 90 s jog, 2 km c/d.",g:1},
+{w:18, mon:"2026-11-09", target:76, s:[
+  {o:1,k:14,t:"quality",n:"6×1.6 km threshold",p:"3:58–4:04",x:"2 km w/u, 6×1.6 km @ 3:58–4:04 with 90 s jog, 2 km c/d. One rep more than planned — you are off work and fresh. Hold the ceiling; judge by HR (~158→174) if on the track.",g:1},
   {o:2,k:9, t:"group",  n:"Group run",p:"~5:45",x:"Fixed social/recovery run."},
-  {o:3,k:13,t:"mp",     n:"8 km @ MP",p:"4:12–4:16",x:"3 km w/u, 8 km @ MP, 2 km c/d."},
+  {o:3,k:15,t:"mp",     n:"9 km @ MP",p:"4:12–4:16",x:"3 km w/u, 9 km @ MP, 3 km c/d. Stretched from 8 km — time off work, so more MP volume."},
+  {o:4,k:8, t:"easy",   n:"Easy (+ gym)",p:"5:00–5:30",x:"8 km easy, added for the off-work week. Keep it honestly easy — gym stays light, nothing heavy on the legs or back.",g:1},
   {o:5,k:8, t:"easy",   n:"Easy + strides",p:"5:00–5:30",x:"8 km easy + 6×20 s strides."},
-  {o:6,k:20,t:"long",   n:"Long run, 6 km MP finish",p:"4:55–5:15 → MP",x:"20 km, last 6 km @ MP. Taper starts — volume drops, intensity stays. Fuel: four Tropical Fruit."}]},
+  {o:6,k:22,t:"long",   n:"Long run, 8 km MP finish",p:"4:55–5:15 → MP",x:"22 km, last 8 km @ MP (up from 20 km / 6 km). Last long run before the taper starts. Fuel: five Tropical Fruit, every ~22 min."}]},
 
 {w:19, mon:"2026-11-16", target:50, s:[
   {o:1,k:11,t:"quality",n:"6×1 km",p:"3:56–4:02",x:"2 km w/u, 6×1 km @ 3:56–4:02 with 2 min jog, 2 km c/d.",g:1},
@@ -382,7 +383,7 @@ function render(kmByDate, dataOk, note){
 
   var next = SESSIONS.filter(function(s){
     return s.date > TODAY && !isDone(s, kmByDate);
-  }).slice(0,4);
+  }).slice(0,7);
   document.getElementById("next").innerHTML = next.length
     ? next.map(function(s,i){ return card(s,false,diff(TODAY,s.date)); }).join("")
     : '<div class="skel">Plan complete. Well run.</div>';

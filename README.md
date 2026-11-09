@@ -2,7 +2,7 @@
 
 A one-page daily view of my 21-week build to the **Valencia Marathon, Sunday 6 December 2026** (target 2:59:00 — 4:14/km).
 
-The page reads the browser's date and shows today's session with the full prescription, yesterday's planned-versus-actual, the next four sessions, and a rolling 7-day log. Completed sessions are ticked off automatically from Strava.
+The page reads the browser's date and shows today's session with the full prescription, yesterday's planned-versus-actual, the next seven sessions, and a rolling 7-day log. Completed sessions are ticked off automatically from Strava.
 
 ```
 index.html                     the whole page — plan data baked in, no build step
